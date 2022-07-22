@@ -58,7 +58,7 @@ namespace Tracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
     [TestMethod]
-    public void FindId_ReturnId_Int()
+    public void FindId_ReturnsCorrectOrder_Order()
     {
       string description01 = "Bagels";
       string description02 = "Croissants";

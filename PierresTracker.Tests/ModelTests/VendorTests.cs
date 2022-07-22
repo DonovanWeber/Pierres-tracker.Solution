@@ -26,7 +26,7 @@ namespace Tracker.Tests
       string vendorName = "Test Cafe";
       Vendor newVendor = new Vendor(vendorName);
       string result = newVendor.Title;
-      Assert.AreEqual(vendorName, newVendor);
+      Assert.AreEqual(vendorName, result);
     }
   }
 }  

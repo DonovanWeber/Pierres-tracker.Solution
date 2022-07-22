@@ -27,7 +27,7 @@ namespace Tracker.Tests
       string description = "Bagels and croissant";
       Order newOrder = new Order(description);
       string result = newOrder.Description;
-      Assert.AreEqual(description, "r");
+      Assert.AreEqual(description, result);
     }
   }
 

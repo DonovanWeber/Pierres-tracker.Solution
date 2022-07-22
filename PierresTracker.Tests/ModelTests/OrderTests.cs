@@ -39,6 +39,24 @@ namespace Tracker.Tests
       string result = newOrder.Description;
       Assert.AreEqual(newDescription, result);
     }
+    [TestMethod]
+    public void GetAll_ReturnsEmptyList_OrderList()
+    {
+      List<Order> newList = new List<Order>{ };
+      List<Order> result = Order.GetAll();
+      CollectionsAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsOrders_OrderList()
+    {
+      string description01 = "Bagels";
+      string description02 = "Croissants";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2};
+      List<Order> result = Order.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 
   

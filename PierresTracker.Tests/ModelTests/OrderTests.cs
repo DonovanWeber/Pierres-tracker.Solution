@@ -7,13 +7,20 @@ using System;
 namespace Tracker.Tests
 {
   [TestClass]
-  public class OrderTests //: IDisposable
+  public class OrderTests : IDisposable
   {
 
-    // public void Dispose()
-    // {
-    //   Category.ClearAll();
-    // }
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
+    [TestMethod]
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    {
+      Order newOrder = new Order("test bagels");
+      Assert.AreEqual(typeof(Order), newOrder.GetType());
+    }
   }
 
   

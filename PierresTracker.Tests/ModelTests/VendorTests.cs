@@ -20,5 +20,13 @@ namespace Tracker.Tests
       Vendor newVendor = new Vendor("Test Cafe");
       Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
+    [TestMethod]
+    public void GetTitle_ReturnsTitle_String()
+    {
+      string vendorName = "Test Cafe";
+      Vendor newVendor = new Vendor(vendorName);
+      string result = newVendor.Title;
+      Assert.AreEqual(vendorName, newVendor);
+    }
   }
 }  

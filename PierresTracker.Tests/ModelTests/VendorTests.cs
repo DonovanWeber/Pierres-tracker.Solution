@@ -28,5 +28,13 @@ namespace Tracker.Tests
       string result = newVendor.Title;
       Assert.AreEqual(vendorName, result);
     }
+    [TestMethod]
+    public void GetId_ReturnVendorId_Int()
+    {
+      string vendorName = "Test Cafe";
+      Vendor newVendor = new Vendor(vendorName);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }  

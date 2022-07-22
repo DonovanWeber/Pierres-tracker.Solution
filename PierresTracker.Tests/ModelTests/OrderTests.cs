@@ -82,12 +82,18 @@ namespace Tracker.Tests
     [TestMethod]
     public void GetPrice_ReturnPrice_Int()
     {
-      // string title = "Order from Test Cafe";
-      // string descriptionOfOrder = "Bagels";
-      // Order newOrder = new Order (title, descriptionOfOrder);
       int price = Order.GetPrice();
       int testPrice = 10;
       Assert.AreEqual(price, testPrice);
+    }
+    [TestMethod]
+    public void SetPrice_ReturnPrice_Int()
+    {
+      int testPrice = 15;
+      Order.Price = testPrice;
+      int result = Order.Price;
+
+      Assert.AreEqual(testPrice, result);
     }
   }
 

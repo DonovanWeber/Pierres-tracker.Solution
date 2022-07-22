@@ -57,6 +57,18 @@ namespace Tracker.Tests
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
+    [TestMethod]
+    public void FindId_ReturnId_Int()
+    {
+      string description01 = "Bagels";
+      string description02 = "Croissants";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+
+      Order foundOrder = Order.Find(2);
+
+      Assert.AreEqual(newOrder2, 1);
+    }
   }
 
   

@@ -7,6 +7,7 @@ namespace Tracker.Models
   {
     public string Description { get; set; }
     private static List<Order> _instances = new List<Order>{ };
+    public int Id{ get; }
     public Order(string description)
     {
       Description = description;
@@ -21,6 +22,10 @@ namespace Tracker.Models
     public static List<Order> GetAll()
     {
       return _instances;
+    }
+    public static Order Find(int searchId)
+    {
+      return _instances[searchId-1];
     }
   }
 }

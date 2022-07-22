@@ -67,7 +67,7 @@ namespace Tracker.Tests
 
       Order foundOrder = Order.Find(2);
 
-      Assert.AreEqual(newOrder2, 1);
+      Assert.AreEqual(newOrder2, foundOrder);
     }
   }
 

@@ -76,7 +76,7 @@ namespace Tracker.Tests
     string description = "bagels";
     Order newOrder = new Order(title, description);
     DateTime currentDate = DateTime.Today;
-    DateTime foundDate = newOrder.CurrentDate;
+    DateTime foundDate = Order.GetDate();
     Assert.AreEqual(currentDate, foundDate);
 
     }

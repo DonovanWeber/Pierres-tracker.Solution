@@ -21,6 +21,14 @@ namespace Tracker.Tests
       Order newOrder = new Order("test bagels");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      string description = "Bagels and croissant";
+      Order newOrder = new Order(description);
+      string result = newOrder.Description;
+      Assert.AreEqual(description, "r");
+    }
   }
 
   

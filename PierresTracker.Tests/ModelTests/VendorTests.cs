@@ -61,9 +61,9 @@ namespace Tracker.Tests
     public void AddOrder_AssociatesOrderWithVendor_OrderList()
     {
       string description = "bagels";
-      Order newOrder = new Order(description);
-      List<Order> newList = new List<Order>{ newOrder };
       string title = "Test Cafe";
+      Order newOrder = new Order(title, description);
+      List<Order> newList = new List<Order>{ newOrder };
       Vendor newVendor = new Vendor(title,"test");
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;

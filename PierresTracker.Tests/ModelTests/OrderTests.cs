@@ -18,14 +18,14 @@ namespace Tracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order newOrder = new Order("test bagels");
+      Order newOrder = new Order("test cafe", "test bagels");
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
     public void GetDescription_ReturnsDescription_String()
     {
       string description = "Bagels and croissant";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order("test cafe", description);
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
@@ -33,7 +33,7 @@ namespace Tracker.Tests
     public void SetDescription_SetDescription_String()
     {
       string description = "bagels";
-      Order newOrder = new Order(description);
+      Order newOrder = new Order("test cafe", description);
       string newDescription = "croissants";
       newOrder.Description = newDescription;
       string result = newOrder.Description;
@@ -51,8 +51,8 @@ namespace Tracker.Tests
     {
       string description01 = "Bagels";
       string description02 = "Croissants";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      Order newOrder1 = new Order("test cafe", description01);
+      Order newOrder2 = new Order("test cafe", description02);
       List<Order> newList = new List<Order> { newOrder1, newOrder2};
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
@@ -62,12 +62,23 @@ namespace Tracker.Tests
     {
       string description01 = "Bagels";
       string description02 = "Croissants";
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
+      Order newOrder1 = new Order("test cafe", description01);
+      Order newOrder2 = new Order("test cafe", description02);
 
       Order foundOrder = Order.Find(2);
 
       Assert.AreEqual(newOrder2, foundOrder);
+    }
+    [TestMethod]
+    public void GetDate_ReturnCurrentDate_DateTime()
+    {
+    string title = "Order from test cafe";
+    string description = "bagels";
+    Order newOrder = new Order(title, description);
+    DateTime currentDate = DateTime.Today;
+    DateTime foundDate = newOrder.CurrentDate;
+    Assert.AreEqual(currentDate, foundDate);
+
     }
   }
 

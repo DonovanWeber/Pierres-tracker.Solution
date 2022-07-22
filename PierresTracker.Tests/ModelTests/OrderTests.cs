@@ -44,7 +44,7 @@ namespace Tracker.Tests
     {
       List<Order> newList = new List<Order>{ };
       List<Order> result = Order.GetAll();
-      CollectionsAssert.AreEqual(newList, result);
+      CollectionAssert.AreEqual(newList, result);
     }
     [TestMethod]
     public void GetAll_ReturnsOrders_OrderList()

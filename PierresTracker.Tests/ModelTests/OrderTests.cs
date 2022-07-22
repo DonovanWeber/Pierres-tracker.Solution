@@ -29,6 +29,16 @@ namespace Tracker.Tests
       string result = newOrder.Description;
       Assert.AreEqual(description, result);
     }
+    [TestMethod]
+    public void SetDescription_SetDescription_String()
+    {
+      string description = "bagels";
+      Order newOrder = new Order(description);
+      string newDescription = "croissants";
+      newOrder.Description = newDescription;
+      string result = newOrder.Description;
+      Assert.AreEqual(newDescription, result);
+    }
   }
 
   

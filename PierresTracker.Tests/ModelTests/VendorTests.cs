@@ -43,11 +43,19 @@ namespace Tracker.Tests
       string vendorName2 = "Cafe de Test";
       Vendor newVendor1 = new Vendor(vendorName1);
       Vendor newVendor2 = new Vendor(vendorName2);
-
       List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2};
-
       List<Vendor> result = Vendor.GetAll();
       CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string vendorName1 = "Test Cafe";
+      string vendorName2 = "Cafe de Test";
+      Vendor newVendor1 = new Vendor(vendorName1);
+      Vendor newVendor2 = new Vendor(vendorName2);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor2, result);
     }
   }
 }  

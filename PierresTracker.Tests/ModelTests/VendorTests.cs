@@ -78,7 +78,7 @@ namespace Tracker.Tests
       newVendor.Description = descriptionOfVendor;
       string result = newVendor.Description;
       Assert.AreEqual(descriptionOfVendor, result);
-
     }
+    
   }
 }  

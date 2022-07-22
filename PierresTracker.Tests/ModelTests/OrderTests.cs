@@ -64,21 +64,30 @@ namespace Tracker.Tests
       string description02 = "Croissants";
       Order newOrder1 = new Order("test cafe", description01);
       Order newOrder2 = new Order("test cafe", description02);
-
       Order foundOrder = Order.Find(2);
-
       Assert.AreEqual(newOrder2, foundOrder);
     }
+    
     [TestMethod]
     public void GetDate_ReturnCurrentDate_DateTime()
     {
-    string title = "Order from test cafe";
-    string description = "bagels";
-    Order newOrder = new Order(title, description);
-    DateTime currentDate = DateTime.Today;
-    DateTime foundDate = Order.GetDate();
-    Assert.AreEqual(currentDate, foundDate);
-
+      string title = "Order from test cafe";
+      string description = "bagels";
+      Order newOrder = new Order(title, description);
+      DateTime currentDate = DateTime.Today;
+      DateTime foundDate = Order.GetDate();
+      Assert.AreEqual(currentDate, foundDate);
+    }
+    
+    [TestMethod]
+    public void GetPrice_ReturnPrice_Int()
+    {
+      // string title = "Order from Test Cafe";
+      // string descriptionOfOrder = "Bagels";
+      // Order newOrder = new Order (title, descriptionOfOrder);
+      int price = Order.GetPrice();
+      int testPrice = 10;
+      Assert.AreEqual(price, testPrice);
     }
   }
 
